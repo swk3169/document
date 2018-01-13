@@ -1,0 +1,8 @@
+[VirtualBox Version 4.3]
+https://www.virtualbox.org/
+
+[Bee-Box]
+https://sourceforge.net/projects/bwapp/files/bee-box/
+
+[Kali-Linux]
+https://www.offensive-security.com/kali-linux-vmware-virtualbox-image-download/

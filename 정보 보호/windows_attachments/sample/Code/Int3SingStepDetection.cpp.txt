@@ -1,0 +1,30 @@
+v#include <windows.h>
+
+void Int3SingStepDetection()
+{
+	DWORD dwDebugger = 1;
+	__try
+	{
+		__asm
+		{
+			//int3
+			__emit 0xCC
+		}
+	}
+	__except (EXCEPTION_EXECUTE_HANDLER)
+	{
+		dwDebugger = 0;
+	}
+	if (dwDebugger)
+	{
+		MessageBox(NULL, L"Warning", L"Warning", NULL);
+		ExitProcess(0);
+	}
+}
+
+int main()
+{
+	Int3SingStepDetection();
+	WinExec("calc.exe", 5);
+	return true;
+}
